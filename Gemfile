@@ -18,6 +18,7 @@ gem 'webpacker'
 gem 'devise'
 gem 'jquery-rails'
 gem 'toastr-rails', '~> 1.0'
+gem "figaro"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
