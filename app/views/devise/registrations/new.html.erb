@@ -1,0 +1,24 @@
+<div class="row">
+  <div class='col-md-4 col-md-offset-4'>
+    <h2 class='text-center'> Sign up</h2>
+
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
+    <div class="form-group">
+      <%= f.input :fullname, required: true, autofocus: true, placeholder: 'durant', class:'form-control' %>
+      </div>
+    <div class="form-group">
+      <%= f.input :email, required: true, autofocus: true, placeholder: 'johnn@gmail.com', class:'form-control' %>
+      </div>
+      <div class="form-group">
+      <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: 'Wskn@23', class:'form-control' %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Sign up", class:'btn btn-primary' %>
+    </div>
+    <% end %>
+
+
+  </div>
+</div>
