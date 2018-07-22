@@ -3,7 +3,8 @@
     <h2 class='text-center'> Sign up</h2>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.error_notification %>
+
+     <%= render 'shared/devisemes' %>
     <div class="form-group">
       <%= f.input :fullname, required: true, autofocus: true, placeholder: 'durant', class:'form-control' %>
       </div>

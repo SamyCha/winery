@@ -17,6 +17,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 gem 'jquery-rails'
+gem 'toastr-rails', '~> 1.0'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
