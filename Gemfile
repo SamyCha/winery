@@ -18,7 +18,9 @@ gem 'webpacker'
 gem 'devise'
 gem 'jquery-rails'
 gem 'toastr-rails', '~> 1.0'
-gem "figaro"
+gem 'figaro'
+gem 'omniauth', '~> 1.6'
+gem 'omniauth-facebook', '~> 4.0'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
