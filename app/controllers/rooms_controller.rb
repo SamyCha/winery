@@ -22,7 +22,7 @@ class RoomsController < ApplicationController
   end
 
   def show
-#    @photos = @room.photos
+  @photos = @room.photos
 #    @guest_reviews = @room.guest_reviews
   end
 
