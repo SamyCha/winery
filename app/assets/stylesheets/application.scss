@@ -49,7 +49,6 @@ a {
   font-weight: 400;
 }
 
-
 // BUTTONS
 .btn-block {
   display: block;
@@ -115,7 +114,6 @@ a {
   border-color: #2d467b;
   background-color: #2d467b;
 }
-
 
 // PANELS
 .panel-default .panel-heading {
@@ -227,6 +225,34 @@ a {
   color: #00A699;
 }
 
+// SIDEBAR
+.sidebar-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.sidebar-item {
+  padding: 10px 0;
+  font-size: 16px;
+  color: #82888a;
+}
+
+.sidebar-link {
+  color: #82888a;
+  text-decoration: none;
+}
+
+.sidebar-link:hover, .sidebar-link:focus {
+  color: #CACCCD;
+  text-decoration: none;
+}
+
+.active.sidebar-link {
+  color: #565A5C;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 // PHOTO UPLOAD
 .btn-file {
   position: relative;
@@ -257,7 +283,6 @@ a {
   width: 100%;
 }
 
-
 // ROOM SHOW
 .amenities li {
   margin-bottom: 10px;
@@ -271,3 +296,68 @@ a {
   font-size: 14px;
 }
 
+// RESERVATIONS
+.reservation-table td {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #dce0e0;
+  padding: 10px;
+}
+
+.reservation-table .total td {
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+}
+
+.form-control.datepicker {
+  color: #00A699;
+  background-color: white;
+  border: 1px solid #00A699;
+  text-align: center;
+}
+
+.message-alert {
+  color: #d43242;
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+// SEARCH
+#main {
+  height: 100%;
+  overflow: hidden;
+}
+
+#left {
+  padding: 10px 400px 10px 20px;
+  overflow: scroll;
+  height: 100%;
+}
+
+#right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 450px;
+  height: 100%;
+}
+
+.map_price {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #00A699;
+}
+
+// HOME PAGE
+.discovery-card {
+  background-size: cover;
+  background-position: center;
+  height: 326px;
+}
+
+.banner {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
