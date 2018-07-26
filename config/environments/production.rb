@@ -65,6 +65,21 @@ config.webpacker.check_yarn_integrity = false
   # config.active_job.queue_name_prefix = "golf-locations_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
+
+config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.perform_deliveries = true
+
+  ActionMailer::Base.smtp_settings = {
+    :address => 'smtp.mailgun.org',
+    :port => 587,
+    domain: 'sandbox5b10c5c537234bcebf73dc6602f12e39.mailgun.org',
+    authentication: 'plain',
+    user_name: 'postmaster@sandbox5b10c5c537234bcebf73dc6602f12e39.mailgun.org',
+    password: 'b173d6735b1c092e202e538d5916148b-3b1f59cf-9258a789'
+  }
+
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
