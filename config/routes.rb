@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-
-  root to: 'pages#home'
+  root 'pages#home'
 
   devise_for :users,
              path: '',
@@ -19,11 +18,16 @@ Rails.application.routes.draw do
       get 'preload'
       get 'preview'
     end
-  resources :photos, only: [:create, :destroy]
-  resources :reservations, only: [:create]
+    resources :photos, only: [:create, :destroy]
+    resources :reservations, only: [:create]
   end
 
+  resources :guest_reviews, only: [:create, :destroy]
+  resources :host_reviews, only: [:create, :destroy]
 
+  get '/your_trips' => 'reservations#your_trips'
+  get '/your_reservations' => 'reservations#your_reservations'
 
+  get 'search' => 'pages#search'
 
 end

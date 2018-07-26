@@ -122,7 +122,20 @@
     </div>
     <hr/>
 
-    <!-- REVIEWS -->
+       <!-- REVIEWS -->
+    <div class="row">
+      <div class="col-md-12">
+        <h3>
+          <%= pluralize(@guest_reviews.count, "Review") %>
+          <span id="average_rating"></span>
+        </h3>
+        <div class="container">
+          <div><%= render "reviews/guest_list" %></div>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <hr/>
 
 
     <!-- GOOGLE MAP -->
@@ -180,8 +193,14 @@
     <!-- Reservation Form -->
     <%= render 'reservations/form' %>
   </div>
+</div>
 
-</div>
-</div>
+<script>
+  $('#average_rating').raty({
+    path: '/assets',
+    readOnly: true,
+    score: <%= @room.average_rating %>
+  });
+</script>
 
 
