@@ -60,24 +60,12 @@ Rails.application.configure do
 
  config.action_mailer.smtp_settings = {
     address: 'smtp.mailgun.org',
-    port: 587,
-    domain: 'sandbox5b10c5c537234bcebf73dc6602f12e39.mailgun.org',
+    port: ENV['MAILGUN_SMTP_PORT'],
+    domain: ENV['MY_DOMAIN'],
     authentication: 'plain',
-    user_name: 'postmaster@sandbox5b10c5c537234bcebf73dc6602f12e39.mailgun.org',
-    password: 'b173d6735b1c092e202e538d5916148b-3b1f59cf-9258a789'
+    user_name: ENV['MAILGUN_SMTP_LOGIN'],
+    password: ENV['MAILGUN_SMTP_PASSWORD']
   }
-
-
-# envoi via gmail:
-#  config.action_mailer.smtp_settings = {
-#    address: 'smtp.gmail.com',
-#    port: 587,
-#    domain: 'gmail.com',
-   #enable_starttls_auto: true,
-#    authentication: 'plain',
-#    user_name: ENV["user_name"],
-#    password: ENV["password"]
-#  }
 
    config.paperclip_defaults = {
     storage: :s3,

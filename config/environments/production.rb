@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Verifies that versions and hashed value of the package contents in the project's package.json
-config.webpacker.check_yarn_integrity = false
+  config.webpacker.check_yarn_integrity = false
 
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -64,21 +64,23 @@ config.webpacker.check_yarn_integrity = false
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "golf-locations_#{Rails.env}"
   config.action_mailer.perform_caching = false
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
 
+  ActionMailer::Base.smtp_settings =
+  {
 
-config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-config.action_mailer.delivery_method = :smtp
-config.action_mailer.perform_deliveries = true
+   :address              => 'smtp.mailgun.org',
+   :port                 => ENV['MAILGUN_SMTP_PORT'],
+   :domain               => ENV['MY_DOMAIN'],
+   :user_name            => ENV['MAILGUN_SMTP_LOGIN'],
+   :password             => ENV['MAILGUN_SMTP_PASSWORD'],
+   :authentication       => 'plain'
+ }
 
-  ActionMailer::Base.smtp_settings = {
-    :address => 'smtp.mailgun.org',
-    :port => 587,
-    domain: 'sandbox5b10c5c537234bcebf73dc6602f12e39.mailgun.org',
-    authentication: 'plain',
-    user_name: 'postmaster@sandbox5b10c5c537234bcebf73dc6602f12e39.mailgun.org',
-    password: 'b173d6735b1c092e202e538d5916148b-3b1f59cf-9258a789'
-  }
-
+ config.action_mailer.default_url_options = { :host => 'https://golf-locations.herokuapp.com/' }
+ config.action_mailer.asset_host = 'https://golf-locations.herokuapp.com/'
+ config.action_controller.asset_host = 'https://golf-locations.herokuapp.com/'
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
