@@ -57,15 +57,25 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.delivery_method = :smtp
-
- config.action_mailer.smtp_settings = {
-    address: 'smtp.mailgun.org',
-    port: ENV['MAILGUN_SMTP_PORT'],
-    domain: ENV['MY_DOMAIN'],
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.googlemail.com',
+    port: 587,
+  #  enable_starttls_auto: true,
+    domain: 'gmail.com',
     authentication: 'plain',
-    user_name: ENV['MAILGUN_SMTP_LOGIN'],
-    password: ENV['MAILGUN_SMTP_PASSWORD']
+    user_name: 'golflocations@gmail.com',#ENV['GMAIL_ACCOUNT'],
+    password: '@golf2018'#ENV['GMAIL_PASSWORD']
   }
+
+
+# config.action_mailer.smtp_settings = {
+#    address: 'smtp.mailgun.org',
+#    port: ENV['MAILGUN_SMTP_PORT'],
+#    domain: ENV['MY_DOMAIN'],
+#    authentication: 'plain',
+#    user_name: ENV['MAILGUN_SMTP_LOGIN'],
+#    password: ENV['MAILGUN_SMTP_PASSWORD']
+#  }
 
    config.paperclip_defaults = {
     storage: :s3,

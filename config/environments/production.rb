@@ -64,23 +64,7 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "golf-locations_#{Rails.env}"
   config.action_mailer.perform_caching = false
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.delivery_method = :smtp
 
-  ActionMailer::Base.smtp_settings =
-  {
-
-   :address              => 'smtp.mailgun.org',
-   :port                 => ENV['MAILGUN_SMTP_PORT'],
-   :domain               => ENV['MY_DOMAIN'],
-   :user_name            => ENV['MAILGUN_SMTP_LOGIN'],
-   :password             => ENV['MAILGUN_SMTP_PASSWORD'],
-   :authentication       => 'plain'
- }
-
- config.action_mailer.default_url_options = { :host => 'https://golf-locations.herokuapp.com/' }
- config.action_mailer.asset_host = 'https://golf-locations.herokuapp.com/'
- config.action_controller.asset_host = 'https://golf-locations.herokuapp.com/'
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
