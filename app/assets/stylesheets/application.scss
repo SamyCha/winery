@@ -16,6 +16,23 @@
 @import "pages/index";
 
 
+
+.container-background  {
+  background-image: url('background-golf.jpg');
+  //background-color: grey;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.background-image{
+background-image: url(/assets/background-golf.jpg);
+background-size: cover;
+background-position: center;
+height: 70vh;
+}
+
 body {
   color: #565a5c;
   background-color: #F8F8F8;
@@ -36,6 +53,11 @@ a {
 
 .text-red, .icon-red {
   color: #FF5A5F;
+}
+
+.text-white, .icon-red {
+  color: white;
+  font-size: 26px;
 }
 
 // NAVBARS
