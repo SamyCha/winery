@@ -18,7 +18,7 @@
 
 
 .container-background  {
-  background-image: url('background-golf.jpg');
+  background-image: url('https://s3.eu-central-1.amazonaws.com/golf-locations-2018/photos/images/1/medium/background-golf.jpg');
   //background-color: grey;
   background-size: cover;
   background-position: center;
@@ -31,10 +31,6 @@ background-image: url(/assets/background-golf.jpg);
 background-size: cover;
 background-position: center;
 height: 70vh;
-}
-
-.background-color {
-  background-color: #bdc3c7;
 }
 
 body {
