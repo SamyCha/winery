@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   devise_for :users,
-             path: '',
-             path_names: {sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'registration'},
-             controllers: {omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations'}
+  path: '',
+  path_names: {sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'registration'},
+  controllers: {omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations'}
 
   resources :users, only: [:show]
   resources :rooms, except: [:edit] do
@@ -29,5 +29,16 @@ Rails.application.routes.draw do
   get '/your_reservations' => 'reservations#your_reservations'
 
   get 'search' => 'pages#search'
+
+
+
+  get 'dashboard' => 'dashboards#index'
+
+  resources :reservations, only: [:approve, :decline] do
+    member do
+      post '/approve' => "reservations#approve"
+      post '/decline' => "reservations#decline"
+    end
+  end
 
 end

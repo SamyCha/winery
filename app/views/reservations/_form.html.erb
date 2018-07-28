@@ -1,10 +1,11 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <span><i class="fa fa-bolt" style="color: #ffb400"></i> $<%= @room.price %></span>
-    <span class="pull-right">Per Night</span>
-  </div>
-  <div class="panel-body">
-    <%= form_for([@room, @room.reservations.new]) do |f| %>
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <span><% if @room.Instant? %><i class="fa fa-bolt" style="color: #ffb400"></i> <% end %> $<%= @room.price %></span>
+      <span class="pull-right">Per Night</span>
+    </div>
+    <div class="panel-body">
+      <%= form_for([@room, @room.reservations.new]) do |f| %>
       <div class="row">
         <div class="col-md-6">
           <label>Check In</label>
@@ -38,8 +39,13 @@
 
       <br/>
 
+      <% if @room.Instant? %>
       <%= f.submit "Book Now", id: "btn_book", class: "btn btn-normal btn-block", disabled: true %>
-    <% end %>
+      <% else %>
+      <%= f.submit "Request Now", id: "btn_book", class: "btn btn-normal btn-block", disabled: true %>
+      <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 
@@ -61,9 +67,9 @@
       success: function(data) {
 
         $.each(data, function(arrID, arrValue) {
-            for(var d = new Date(arrValue.start_date); d <= new Date(arrValue.end_date); d.setDate(d.getDate() + 1)) {
-              unavailableDates.push($.datepicker.formatDate('d-m-yy', d));
-            }
+          for(var d = new Date(arrValue.start_date); d <= new Date(arrValue.end_date); d.setDate(d.getDate() + 1)) {
+            unavailableDates.push($.datepicker.formatDate('d-m-yy', d));
+          }
         });
 
         $('#reservation_start_date').datepicker({
