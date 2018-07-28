@@ -3,29 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>TODO</title>
+  <title>Find Golf Courses Accomodation</title>
   <%= csrf_meta_tags %>
   <%= action_cable_meta_tag %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANdP8fE11ugb8s-3TsSmuUamnTxAjfa6g&libraries=places"></script>
-
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANdP8fE11ugb8s-3TsSmuUamnTxAjfa6g&libraries=places"></script>
 
   <%= javascript_include_tag 'application' %>
   <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/hot-sneaks/jquery-ui.css">
 
-
-
 </head>
 <body>
   <%= render 'shared/navbar' %>
   <%= render 'shared/message' %>
 
-<!--container inside each page -->
-    <%= yield %>
+  <!--container inside each page -->
+  <%= yield %>
 
 
   <%= javascript_pack_tag 'application' %>
