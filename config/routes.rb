@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     end
     resources :photos, only: [:create, :destroy]
     resources :reservations, only: [:create]
+    resources :calendars
   end
 
   resources :guest_reviews, only: [:create, :destroy]
@@ -40,5 +41,7 @@ Rails.application.routes.draw do
       post '/decline' => "reservations#decline"
     end
   end
+
+  get '/host_calendar' => "calendars#host"
 
 end

@@ -8,6 +8,11 @@ gem 'puma'
 gem 'rails', '5.1.6'
 gem 'redis'
 
+
+
+
+
+
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'font-awesome-sass', '~> 5.0.9'
@@ -26,6 +31,9 @@ gem "paperclip", "~> 6.0.0"
 gem 'aws-sdk-s3', '~> 1.0.0.rc2'
 gem 'geocoder', '~> 1.4'
 gem 'ransack'
+
+gem 'fullcalendar-rails', '~> 3.4.0'
+gem 'momentjs-rails', '~> 2.17.1'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
