@@ -8,11 +8,6 @@ gem 'puma'
 gem 'rails', '5.1.6'
 gem 'redis'
 
-
-
-
-
-
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'font-awesome-sass', '~> 5.0.9'
@@ -34,6 +29,9 @@ gem 'ransack'
 
 gem 'fullcalendar-rails', '~> 3.4.0'
 gem 'momentjs-rails', '~> 2.17.1'
+gem 'stripe', '~> 3.0.0'
+# nice credit card form:
+gem 'rails-assets-card', source: 'https://rails-assets.org'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
