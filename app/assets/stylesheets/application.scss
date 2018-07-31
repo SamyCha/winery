@@ -4,10 +4,10 @@
 @import "config/bootstrap_variables";
 
 // External libraries
-@import "bootstrap-sprockets";
-@import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 @import "toastr";
 @import "fullcalendar";
 
@@ -15,7 +15,6 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
-
 
 
 .container-background  {
@@ -54,6 +53,11 @@ a {
 
 .text-red, .icon-red {
   color: #FF5A5F;
+}
+
+.text-white {
+  color: white;
+  font-size: 24px;
 }
 
 // NAVBARS

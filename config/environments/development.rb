@@ -43,7 +43,7 @@ Rails.application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
-  config.assets.debug = false
+  config.assets.debug = true
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
@@ -58,13 +58,12 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'https://golf-locations.herokuapp.com/' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.googlemail.com',
+    address: 'smtp.gmail.com',
     port: 587,
-  #  enable_starttls_auto: true,
-    domain: 'gmail.com',
+    enable_starttls_auto: true,
     authentication: 'plain',
-    user_name: 'golflocations@gmail.com',#ENV['GMAIL_ACCOUNT'],
-    password: '@golf2018'#ENV['GMAIL_PASSWORD']
+    user_name: ENV['GMAIL_ACCOUNT'],
+    password: ENV['GMAIL_PASSWORD']
   }
 
 
