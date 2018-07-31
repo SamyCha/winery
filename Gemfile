@@ -34,6 +34,11 @@ gem 'stripe', '~> 3.0.0'
 gem 'rails-assets-card', source: 'https://rails-assets.org'
 gem 'omniauth-stripe-connect', '~> 2.10.0'
 
+#For the assets working in production
+group :production do
+  gem "rails_12factor"
+end
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
