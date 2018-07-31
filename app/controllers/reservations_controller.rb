@@ -64,7 +64,7 @@ class ReservationsController < ApplicationController
   end
 
   private
-#Send SMS with Twillio
+#Send SMS from the guest to the host after booking with Twillio
 #    def send_sms(room, reservation)
 #      @client = Twilio::REST::Client.new
 #      @client.messages.create(
@@ -91,7 +91,7 @@ class ReservationsController < ApplicationController
         if charge
           reservation.Approved!
           ReservationMailer.send_email_to_guest(reservation.user, room).deliver_later if reservation.user.setting.enable_email
-          send_sms(room, reservation) if room.user.setting.enable_sms
+          #send_sms(room, reservation) if room.user.setting.enable_sms
           flash[:notice] = "Reservation created successfully!"
         else
           reservation.Declined!

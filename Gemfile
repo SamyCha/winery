@@ -26,6 +26,7 @@ gem "paperclip", "~> 6.0.0"
 gem 'aws-sdk-s3', '~> 1.0.0.rc2'
 gem 'geocoder', '~> 1.4'
 gem 'ransack'
+gem 'chartkick'
 
 gem 'fullcalendar-rails', '~> 3.4.0'
 gem 'momentjs-rails', '~> 2.17.1'
@@ -33,11 +34,6 @@ gem 'stripe', '~> 3.0.0'
 # nice credit card form:
 gem 'rails-assets-card', source: 'https://rails-assets.org'
 gem 'omniauth-stripe-connect', '~> 2.10.0'
-
-#For the assets working in production
-group :production do
-  gem "rails_12factor"
-end
 
 group :development do
   gem 'web-console', '>= 3.3.0'
