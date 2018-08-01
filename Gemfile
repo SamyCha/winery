@@ -2,13 +2,13 @@ source 'https://rubygems.org'
 ruby '2.3.4'
 
 
-gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.1.6'
-gem 'redis'
+gem 'redis', '3.0.0'
 gem 'coffee-rails', '~> 4.2.0'
 gem 'turbolinks', '~> 5'
+gem 'jbuilder', '~> 2.0'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
