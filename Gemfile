@@ -7,6 +7,8 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.1.6'
 gem 'redis'
+gem 'coffee-rails', '~> 4.2.0'
+gem 'turbolinks', '~> 5'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'

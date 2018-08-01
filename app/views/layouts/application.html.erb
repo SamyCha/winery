@@ -6,9 +6,8 @@
   <title>Find Golf Courses Accomodation</title>
   <%= csrf_meta_tags %>
   <%= action_cable_meta_tag %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-
-  <%= stylesheet_link_tag 'application', media: 'all' %>
 
   <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
 
@@ -25,10 +24,16 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
 
+
+
 </head>
 <body>
   <%= render 'shared/navbar' %>
   <%= render 'shared/message' %>
+
+  <% if current_user %>
+  <input type="hidden" id="user_id" value="<%= current_user.id %>">
+  <% end %>
 
   <!--container inside each page -->
   <%= yield %>
