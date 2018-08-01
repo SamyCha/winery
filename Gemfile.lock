@@ -44,12 +44,12 @@ GEM
       execjs
     aws-eventstream (1.0.1)
     aws-partitions (1.96.0)
-    aws-sdk-core (3.22.1)
+    aws-sdk-core (3.23.0)
       aws-eventstream (~> 1.0)
       aws-partitions (~> 1.0)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-kms (1.6.0)
+    aws-sdk-kms (1.7.0)
       aws-sdk-core (~> 3)
       aws-sigv4 (~> 1.0)
     aws-sdk-s3 (1.0.0)
@@ -99,7 +99,7 @@ GEM
       jquery-rails (>= 4.0.5, < 5.0.0)
       jquery-ui-rails (>= 5.0.2)
       momentjs-rails (>= 2.9.0)
-    geocoder (1.4.9)
+    geocoder (1.5.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     hashie (3.5.7)
@@ -217,7 +217,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
-    redis (4.0.1)
+    redis (3.0.0)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -312,7 +312,7 @@ DEPENDENCIES
   rails (= 5.1.6)
   rails-assets-card!
   ransack
-  redis
+  redis (= 3.0.0)
   sass-rails
   simple_form
   spring
