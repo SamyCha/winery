@@ -3,6 +3,9 @@ class PagesController < ApplicationController
     @rooms = Room.where(active: true).limit(3)
   end
 
+  def become_host
+  end
+
   def search
     # STEP 1
     if params[:search].present? && params[:search].strip != ""
@@ -11,7 +14,7 @@ class PagesController < ApplicationController
 
     # STEP 2
     if session[:loc_search] && session[:loc_search] != ""
-      @rooms_address = Room.where(active: true).near(session[:loc_search], 5, order: 'distance')
+      @rooms_address = Room.where(active: true).near(session[:loc_search], 100, order: 'distance')
     else
       @rooms_address = Room.where(active: true).all
     end
@@ -39,12 +42,12 @@ class PagesController < ApplicationController
           start_date, end_date,
           start_date, end_date,
           1
-        ).limit(1)
+          ).limit(1)
 
         not_available_in_calendar = Calendar.where(
           "room_id = ? AND status = ? AND day <= ? AND day >= ?",
           room.id, 1, end_date, start_date
-        ).limit(1)
+          ).limit(1)
 
         if not_available.length > 0 || not_available_in_calendar.length > 0
           @arrRooms.delete(room)

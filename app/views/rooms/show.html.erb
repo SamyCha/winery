@@ -159,7 +159,7 @@
           });
 
           var infoWindow = new google.maps.InfoWindow({
-            content: '<div id="content"><%= image_tag @room.cover_photo(:medium) %></div>'
+            content: '<div id="content"><%= @room.listing_name %></div>'
           });
 
           infoWindow.open(map, marker);
@@ -174,7 +174,7 @@
     <!-- NEAR BY ROOMS -->
     <div class="row">
       <h3>Near by</h3>
-      <% for room in @room.nearbys(10) %>
+      <% for room in @room.nearbys(100) %>
       <div class="col-md-4">
         <div class="panel panel-default">
           <div class="panel-heading preview">
