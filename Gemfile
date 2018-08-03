@@ -1,4 +1,6 @@
-source 'http://rubygems.org'
+source 'http://insecure.rails-assets.org'
+
+#source 'http://rubygems.org'
 ruby '2.3.4'
 
 
