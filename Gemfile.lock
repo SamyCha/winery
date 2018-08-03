@@ -290,7 +290,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
-  aws-sdk-s3 (~> 1.0.0.rc2)
+  aws-sdk-s3
   bootstrap-sass (~> 3.3)
   chartkick
   coffee-rails (~> 4.2.0)

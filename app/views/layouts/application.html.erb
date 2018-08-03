@@ -13,7 +13,7 @@
 
   <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
 
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANdP8fE11ugb8s-3TsSmuUamnTxAjfa6g&libraries=places"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_BROWSER_KEY'] %>&libraries=places"></script>
 
   <%= javascript_include_tag 'application' %>
   <%= javascript_pack_tag 'application' %>

@@ -24,7 +24,7 @@ gem 'figaro'
 gem 'omniauth', '~> 1.6'
 gem 'omniauth-facebook', '~> 4.0'
 gem "paperclip", "~> 6.0.0"
-gem 'aws-sdk-s3', '~> 1.0.0.rc2'
+gem 'aws-sdk-s3'
 gem 'geocoder', '~> 1.4'
 gem 'ransack'
 gem 'chartkick'
