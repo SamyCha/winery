@@ -25,8 +25,10 @@
           <li><%= link_to "Login", new_user_session_path %></li>
           <li><%= link_to "Sign Up", new_user_registration_path %></li>
           <% else %>
+
           <li><button class="btn btn-form btn-small">
           <%= link_to "Your Trips", your_trips_path, style: "color: white; text-decoration: none;" %></button></li>
+
 <!--
           <%= link_to "Log out", destroy_user_session_path, method: :delete %>
 
