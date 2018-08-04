@@ -9,9 +9,7 @@
       <div class="container">
 
         <%= form_for @room do |f| %>
-
         <div class="row">
-
           <div class="col-md-4 select">
             <div class="form-group">
               <label>Home Type</label>
@@ -64,8 +62,14 @@
         <div><%= f.submit "Create My Room", class: "btn btn-normal" %></div>
 
         <% end %>
+        <div class="row text-center">
+          <strong>Be carefull:<br>
+            Instant booking: allows customer to book directly <br>
+            Request : needs host approval before booking is approved<br>
+            Customer Credit Card Info is mandatory for the 2 options</strong>
+          </div>
 
+        </div>
       </div>
     </div>
   </div>
-</div>

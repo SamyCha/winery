@@ -14,7 +14,9 @@
       <li <% if current_page?(host_calendar_path) %> class="active" <% end %> ><%= link_to "Host Calendar", host_calendar_path %></li>
       <li <% if current_page?(conversations_path) %> class="active" <% end %> ><%= link_to "Messages", conversations_path %></li>
       <li <% if current_page?(revenues_path) %> class="active" <% end %> ><%= link_to "Revenues", revenues_path %></li>
-     <li <% if current_page?(payout_method_path) %> class="active" <% end %> ><%= link_to "Host Payment settings", payout_method_path %></li>
+<!-- For Stripe Connect Use:
+   link_to payout_method_path.......
+-->
       <li <% if current_page?(notification_settings_path) %> class="active" <% end %> ><%= link_to "Notifications", notification_settings_path %></li>
     </ul>
 </nav>

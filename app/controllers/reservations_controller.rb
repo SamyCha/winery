@@ -81,16 +81,18 @@ class ReservationsController < ApplicationController
           :customer => customer.id,
           :amount => reservation.total * 100,
           :description => room.listing_name,
-          :currency => "usd",
-          :destination => {
-            :amount => reservation.total * 80, # 80% of the total amount goes to the Host
-            :account => room.user.merchant_id # Host's Stripe customer ID
-          }
+          :currency => "eur"
+#In case of usig Stripe Connect with the host
+#          ,
+#          :destination => {
+#            :amount => reservation.total * 80, # 80% of the total amount goes to the Host
+#            :account => room.user.merchant_id # Host's Stripe customer ID
+#          }
         )
 
         if charge
           reservation.Approved!
-          ReservationMailer.send_email_to_guest(reservation.user, room).deliver_later if reservation.user.setting.enable_email
+#          ReservationMailer.send_email_to_guest(reservation.user, room).deliver_later if reservation.user.setting.enable_email
           #send_sms(room, reservation) if room.user.setting.enable_sms
           flash[:notice] = "Reservation created successfully!"
         else
