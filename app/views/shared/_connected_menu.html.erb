@@ -1,7 +1,11 @@
 <% if (user_signed_in?) && !current_page?(root_path) && !current_page?(search_path) && !current_page?(become_host_path) %>
 <nav class="navbar navbar-default" style="background-color: #565A5C">
- <h3 class='text-white text-center'>HOST DASHBOARD:</h3><hr>
-
+ <h3 class='text-white text-center'>HOST DASHBOARD:</h3>
+ <% if current_user.host? %>
+ <h4 class='text-white text-center'>Welcome host: <%= current_user.fullname %></h4>
+<% else %>
+ <h4 class='text-white text-center'>Welcome customer: <%= current_user.fullname %></h4>
+<% end %><hr>
     <ul class="nav navbar-nav">
       <li <% if current_page?(dashboard_path) %> class="active" <% end %> ><%= link_to "Dashboard", dashboard_path %></li>
       <li <% if current_page?(new_room_path) %> class="active" <% end %> ><%= link_to "Add New Property", new_room_path %></li>
@@ -12,8 +16,6 @@
       <li <% if current_page?(revenues_path) %> class="active" <% end %> ><%= link_to "Revenues", revenues_path %></li>
      <li <% if current_page?(payout_method_path) %> class="active" <% end %> ><%= link_to "Host Payment settings", payout_method_path %></li>
       <li <% if current_page?(notification_settings_path) %> class="active" <% end %> ><%= link_to "Notifications", notification_settings_path %></li>
-
     </ul>
-
 </nav>
 <% end %>
