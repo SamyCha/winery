@@ -51,7 +51,8 @@ get '/become_host' => 'pages#become_host'
 
   get '/host_calendar' => "calendars#host"
   get '/payment_method' => "users#payment"
-  get '/payout_method' => "users#payout"
+#For Stripe Connect Use:
+#  get '/payout_method' => "users#payout"
   post '/add_card' => "users#add_card"
 
   get '/notification_settings' => 'settings#edit'
