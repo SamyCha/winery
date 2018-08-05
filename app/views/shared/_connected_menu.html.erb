@@ -4,7 +4,7 @@
 <hr>
  <ul class="nav navbar-nav">
   <li <% if current_page?(dashboard_path) %> class="active" <% end %> ><%= link_to "Dashboard", dashboard_path %></li>
-  <% if current_user.state == 1 %>
+  <% if current_user.state == 'host' %>
   <li <% if current_page?(new_room_path) %> class="active" <% end %> ><%= link_to "Add New Property", new_room_path %></li>
   <li <% if current_page?(rooms_path) %> class="active" <% end %> ><%= link_to "Update Property", rooms_path %></li>
   <li <% if current_page?(your_reservations_path) %> class="active" <% end %> ><%= link_to "Your Bookings", your_reservations_path %></li>
@@ -15,9 +15,7 @@
 <!-- For Stripe Connect Use:
    link_to payout_method_path.......
  -->
-
  <li <% if current_page?(your_trips_path) %> class="active" <% end %> ><%= link_to "Your Trips", your_trips_path %></li>
-
  <li <% if current_page?(notification_settings_path) %> class="active" <% end %> ><%= link_to "Notifications", notification_settings_path %></li>
 </ul>
 </nav>
