@@ -1,4 +1,13 @@
 <div class="background-image">
+ <div class="row">
+ <div class='col-md-9'></div>
+   <div class='col-md-3'>
+     <% if (!user_signed_in?) %>
+     <button class="btn btn-form btn-small">
+      <%= link_to "Become a wine seller", become_host_path, style: "color: white; text-decoration: none;" %></button>
+      <% end %>
+    </div>
+  </div>
   <div class="row">
     <div class="col-xs-1 col-md-1"></div>
     <div class="col-xs-10 col-md-5 banner">
@@ -27,40 +36,40 @@
   <div class="row">
    <div class="col-md-2"></div>
    <div class="col-md-8 text-center">
-   <%= link_to become_host_path do %><br><br>
-    <span class="text-white"><strong>Subscribe newsletter</strong></span><% end %>
-  </div>
-  <div class="col-md-2">
-   <%= image_tag "instagram.png", height: 48 %>
+     <%= link_to become_host_path do %><br><br>
+     <span class="text-white"><strong>Subscribe newsletter</strong></span><% end %>
+   </div>
+   <div class="col-md-2">
+     <%= image_tag "instagram.png", height: 48 %>
+   </div>
  </div>
+
+ <% end %>
 </div>
 
-<% end %>
-</div>
+<script>
+  $('#start_date').datepicker({
+    dateFormat: 'dd-mm-yy',
+    minDate: 0,
+    maxDate: '3m',
+    onSelect: function(selected) {
+      $('#end_date').datepicker("option", "minDate", selected);
+      $('#end_date').attr("disabled", false);
+    }
+  });
 
-  <script>
-    $('#start_date').datepicker({
-      dateFormat: 'dd-mm-yy',
-      minDate: 0,
-      maxDate: '3m',
-      onSelect: function(selected) {
-        $('#end_date').datepicker("option", "minDate", selected);
-        $('#end_date').attr("disabled", false);
-      }
-    });
+  $('#end_date').datepicker({
+    dateFormat: 'dd-mm-yy',
+    minDate: 0,
+    maxDate: '3m',
+    onSelect: function(selected) {
+      $('#start_date').datepicker("option", "maxDate", selected);
+    }
+  });
 
-    $('#end_date').datepicker({
-      dateFormat: 'dd-mm-yy',
-      minDate: 0,
-      maxDate: '3m',
-      onSelect: function(selected) {
-        $('#start_date').datepicker("option", "maxDate", selected);
-      }
-    });
-
-    $(function() {
-      $("#autolocation").geocomplete();
-    })
-  </script>
+  $(function() {
+    $("#autolocation").geocomplete();
+  })
+</script>
 </div>
 

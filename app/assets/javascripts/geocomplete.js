@@ -49,7 +49,7 @@
     location: false,
 
     mapOptions: {
-      zoom: 14,
+      zoom: 1,
       scrollwheel: false,
       mapTypeId: "roadmap"
     },
