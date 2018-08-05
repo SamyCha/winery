@@ -34,13 +34,17 @@
       </div>
     </div>
 
+
       <!-- Your Listings -->
+<% if current_user.state == 1 %>
       <div class="panel panel-default">
         <div class="panel-heading">Your Listings (<%= @rooms.length %>)</div>
         <div class="panel-body">
           <%= render partial: "rooms/rooms_list", locals: {rooms: @rooms} %>
         </div>
       </div>
+<% end %>
+
 
     </div>
   </div>

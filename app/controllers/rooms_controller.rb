@@ -2,7 +2,7 @@ class RoomsController < ApplicationController
   before_action :set_room, except: [:index, :new, :create]
   before_action :authenticate_user!, except: [:show]
   before_action :is_authorised, only: [:listing, :pricing, :description, :photo_upload, :amenities, :location, :update]
-
+  before_action :is_host, only: [:new, :create, :edit, :update, :listing, :pricing, :description, :photo_upload, :amenities, :location]
   def index
     @rooms = current_user.rooms
   end
@@ -112,4 +112,10 @@ class RoomsController < ApplicationController
     def room_params
       params.require(:room).permit(:home_type, :room_type, :accommodate, :bed_room, :bath_room, :listing_name, :summary, :address, :is_tv, :is_kitchen, :is_air, :is_heating, :is_internet, :price, :active, :instant)
     end
+
+def is_host
+    redirect_to dashboard_path, alert: "You don't have permission" unless current_user.state == 'host'
+end
+
+
 end

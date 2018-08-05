@@ -1,7 +1,7 @@
 class ReservationsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_reservation, only: [:approve, :decline]
-
+before_action :is_host, only: [:your_reservations]
   def create
     room = Room.find(params[:room_id])
 
@@ -112,4 +112,9 @@ class ReservationsController < ApplicationController
     def reservation_params
       params.require(:reservation).permit(:start_date, :end_date)
     end
+
+    def is_host
+    redirect_to dashboard_path, alert: "You don't have permission" unless current_user.state == 'host'
+end
+
 end
