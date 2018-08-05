@@ -8,22 +8,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= image_tag "golfer.png", height: 50 %>
-      <%= link_to "Golf Houses", root_path, class: "navbar-brand" %>
+      <%= image_tag "wine_house.png", height: 50 %>
+      <%= link_to "Wine House", root_path, class: "navbar-brand" %>
     </div>
 
-    <div id="navbar" class="navbar-collapse collapse">
-      <%= form_tag search_path, class: "navbar-form navbar-left", method: :get do %>
-      <div class="form-group">
-        <%= text_field_tag :search, params[:search], placeholder: "Anywhere", class: "form-control" %>
-      </div>
-      <% end %>
       <ul class="nav navbar-nav navbar-right">
         <% if (!user_signed_in?) %>
-        <li><button class="btn btn-form btn-small">
-          <%= link_to "Become a host", become_host_path, style: "color: white; text-decoration: none;" %></button></li>
           <li><%= link_to "Login", new_user_session_path %></li>
           <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <li><button class="btn btn-form btn-small">
+          <%= link_to "Become a wine seller", become_host_path, style: "color: white; text-decoration: none;" %></button></li>
           <% else %>
 
           <li><button class="btn btn-form btn-small">

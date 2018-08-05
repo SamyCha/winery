@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Golf Houses</title>
+  <title>Wine House</title>
   <%= csrf_meta_tags %>
   <%= action_cable_meta_tag %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
 
-  <%= favicon_link_tag asset_path('golfer.png'), :rel => 'icon', :type =>  'image/png' %>
+  <%= favicon_link_tag asset_path('wine_house.png'), :rel => 'icon', :type =>  'image/png' %>
 
   <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
 
@@ -20,7 +20,7 @@
   <%= javascript_include_tag 'application' %>
   <%= javascript_pack_tag 'application' %>
 
-  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative:900|Cinzel:900" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/hot-sneaks/jquery-ui.css">
 
@@ -39,7 +39,7 @@
 
   <!--container inside each page -->
   <%= yield %>
-
+<%= render 'shared/footer' %>
 
 </body>
 </html>

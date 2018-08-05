@@ -17,6 +17,35 @@
 @import "pages/index";
 
 
+//FOOTER
+.footer {
+  background: #F4F4F4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.3);
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: black;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-heart {
+  color: #D23333;
+}
+
+
 .container-background  {
   background-image: url('https://s3.eu-central-1.amazonaws.com/golf-locations-2018/background-golf.jpg');
   //background-color: grey;
@@ -27,7 +56,7 @@
 }
 
 .background-image{
-background-image: url(/assets/background-golf.jpg);
+background-image: url(/assets/glasses.jpg);
 background-size: cover;
 background-position: center;
 height: 90vh;
@@ -36,7 +65,7 @@ height: 90vh;
 body {
   color: #565a5c;
   background-color: #F8F8F8;
-  font-family: "Varela Round", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: 'Cinzel Decorative', 'cursive', 'Cinzel', serif;
 }
 
 a {
@@ -71,7 +100,7 @@ a {
 }
 
 .navbar-default .navbar-brand {
-  color: #417505;
+  color: black;
   font-size: 2em;
   font-weight: 400;
 }
@@ -110,8 +139,8 @@ a {
 }
 
 .btn.btn-normal {
-  border: 1px solid #ff5a5f;
-  background-color: #ff5a5f;
+  border: 1px solid #a83034;
+  background-color: #a83034;
 }
 
 .btn.btn-normal:active {
@@ -121,8 +150,8 @@ a {
 }
 
 .btn.btn-form {
-  border: 1px solid #00A699;
-  background-color: #00A699;
+  border: 1px solid #a83034;
+  background-color: #a83034;
 }
 
 .btn.btn-form:active {
