@@ -3,7 +3,7 @@
 <div class='container'>
   <div class="panel panel-default">
     <div class="panel-heading">
-      Create your beautiful place
+      Add your bootle online
     </div>
     <div class="panel-body">
       <div class="container">
@@ -12,16 +12,16 @@
         <div class="row">
           <div class="col-md-4 select">
             <div class="form-group">
-              <label>Home Type</label>
-              <%= f.select :home_type, [["Apartment", "Apartment"], ["House", "House"], ["Bed & Breakfast", "Bed & Breakfast"]],
+              <label>Type of Wine</label>
+              <%= f.select :home_type, [["Champagne", "Champagne"], ["Sparkling Wine", "Sparkling Wine"], ["Red Wine", "Red Wine"], ["Rosé", "Rosé"], ["White Wine", "White Wine"], ["Other", "Other"]],
               id: "home_type", prompt: "Select...", class: "form-control" %>
             </div>
           </div>
 
           <div class="col-md-4 select">
             <div class="form-group">
-              <label>Room Type</label>
-              <%= f.select :room_type, [["Entire", "Entire"], ["Private", "Private"], ["Shared", "Shared"]],
+              <label>Wine Appelation</label>
+              <%= f.select :room_type, [["Pomerol", "Pomerol"], ["St Emilion", "St Emilion"], ["Medoc", "Medoc"], ["Other", "Other"]],
               id: "room_type", prompt: "Select...", class: "form-control" %>
             </div>
           </div>
@@ -35,31 +35,31 @@
 
           <div class="col-md-4 select">
             <div class="form-group">
-              <label>Accommodate</label>
-              <%= f.select :accommodate, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]],
+              <label>Year</label>
+              <%= f.select :accommodate, [["1980", 1980], ["1981", 1981], ["1982", 1982], ["1983", 1983]],
               id: "accommodate", prompt: "Select...", class: "form-control" %>
             </div>
           </div>
 
           <div class="col-md-4 select">
             <div class="form-group">
-              <label>Bedrooms</label>
-              <%= f.select :bed_room, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]],
+              <label>Conservation</label>
+              <%= f.select :bed_room, [["Outside Temperature", "Outside Temperature"], ["Cold", "Cold"], ["Very Cold", "Very Cold"]],
               id: "bed_room", prompt: "Select...", class: "form-control" %>
             </div>
           </div>
 
           <div class="col-md-4 select">
             <div class="form-group">
-              <label>Bathrooms</label>
-              <%= f.select :bath_room, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]],
+              <label>Size of the bottle</label>
+              <%= f.select :bath_room,[["0,375cl", "0,375cl"], ["0,50cl", "0,50cl"], ["0,75cl", "0,75cl"], ["1,5cl", "1,5cl"], ["3l", "3l"], ["5l", "5l"]],
               id: "bath_rooms", prompt: "Select...", class: "form-control" %>
             </div>
           </div>
 
         </div>
 
-        <div><%= f.submit "Create My Room", class: "btn btn-normal" %></div>
+        <div class='text-center'><%= f.submit "Add my Bottle", class: "btn btn-normal" %></div>
 
         <% end %>
         <div class="row text-center">

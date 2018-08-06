@@ -5,10 +5,10 @@
  <ul class="nav navbar-nav">
   <li <% if current_page?(dashboard_path) %> class="active" <% end %> ><%= link_to "Dashboard", dashboard_path %></li>
   <% if current_user.state == 'host' %>
-  <li <% if current_page?(new_room_path) %> class="active" <% end %> ><%= link_to "Add New Property", new_room_path %></li>
-  <li <% if current_page?(rooms_path) %> class="active" <% end %> ><%= link_to "Update Property", rooms_path %></li>
+  <li <% if current_page?(new_room_path) %> class="active" <% end %> ><%= link_to "Add New Bootle", new_room_path %></li>
+  <li <% if current_page?(rooms_path) %> class="active" <% end %> ><%= link_to "Update a Bootle", rooms_path %></li>
   <li <% if current_page?(your_reservations_path) %> class="active" <% end %> ><%= link_to "Your Bookings", your_reservations_path %></li>
-  <li <% if current_page?(host_calendar_path) %> class="active" <% end %> ><%= link_to "Host Calendar", host_calendar_path %></li>
+  <li <% if current_page?('#') %> class="active" <% end %> ><%= link_to "Wine demand", '#' %></li>
   <li <% if current_page?(revenues_path) %> class="active" <% end %> ><%= link_to "Revenues", revenues_path %></li>
   <% end %>
   <li <% if current_page?(conversations_path) %> class="active" <% end %> ><%= link_to "Messages", conversations_path %></li>
