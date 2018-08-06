@@ -104,7 +104,7 @@ config.paperclip_defaults = {
   path: ':class/:attachment/:id/:style/:filename',
   s3_host_name: 's3-eu-central-1.amazonaws.com',
   s3_credentials: {
-   bucket: 'golf-locations-2018',
+   bucket: 'wine-house',
    access_key_id: ENV['S3_ACCESS_KEY'],
    secret_access_key: ENV['S3_SECRET_ACCESS_KEY'],
    s3_region: 'eu-central-1'
