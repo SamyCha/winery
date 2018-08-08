@@ -62,6 +62,7 @@
 
     <!-- Room Info -->
     <div class="row text-babu">
+    <!--
       <div class="row text-center row-space-1">
         <div class="col-md-3">
           <i class="fa fa-home fa-2x"></i>
@@ -76,12 +77,11 @@
           <i class="fa fa-bath fa-2x"></i>
         </div>
       </div>
-
+-->
       <div class="row text-center">
-        <div class="col-md-3"><%= @room.home_type %></div>
-        <div class="col-md-3"><%= pluralize(@room.accommodate, "Guest") %></div>
-        <div class="col-md-3"><%= pluralize(@room.bed_room, "Bedroom") %></div>
-        <div class="col-md-3"><%= pluralize(@room.bath_room, "Bathroom") %></div>
+        <div class="col-md-4"><%= @room.home_type %></div>
+        <div class="col-md-4"><%= @room.room_type %></div>
+        <div class="col-md-4"><%= @room.accommodate %></div>
       </div>
 
     </div>
@@ -90,7 +90,7 @@
     <!-- About -->
     <div class="row">
       <div class="col-md-12">
-        <h3>About This Listing</h3>
+        <h3>Description of this beverage:</h3>
         <p><%= @room.summary %></p>
       </div>
     </div>
@@ -99,22 +99,22 @@
     <!-- Amenities -->
     <div class="row">
       <div class="col-md-3">
-        <h4>Amenities</h4>
+        <h4>Delivery and conditions</h4>
       </div>
 
       <div class="col-md-9">
         <div class="row">
           <div class="col-md-6">
             <ul class="amenities">
-              <li class="<%= 'text-line-through' if !@room.is_tv %>">TV</li>
-              <li class="<%= 'text-line-through' if !@room.is_kitchen %>">Kitchen</li>
-              <li class="<%= 'text-line-through' if !@room.is_internet %>">Internet</li>
+              <li class="<%= 'text-line-through' if !@room.is_tv %>">To Take Away</li>
+              <li class="<%= 'text-line-through' if !@room.is_kitchen %>">Delivered in less than 5 min</li>
+              <li class="<%= 'text-line-through' if !@room.is_internet %>">Delivered in less than 15 min</li>
             </ul>
           </div>
           <div class="col-md-6">
             <ul class="amenities">
-              <li class="<%= 'text-line-through' if !@room.is_heating %>">Heating</li>
-              <li class="<%= 'text-line-through' if !@room.is_air %>">Air Conditioning</li>
+              <li class="<%= 'text-line-through' if !@room.is_heating %>">Invoice of buying</li>
+              <li class="<%= 'text-line-through' if !@room.is_air %>">Wine Conserved in good place</li>
             </ul>
           </div>
 

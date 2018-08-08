@@ -12,44 +12,46 @@
       <%= link_to "Wine House", root_path, class: "navbar-brand" %>
     </div>
 
-      <ul class="nav navbar-nav navbar-right">
-        <% if (!user_signed_in?) %>
-          <li><%= link_to "Login", new_user_session_path %></li>
-          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+    <ul class="nav navbar-nav navbar-right">
+      <% if (!user_signed_in?) %>
+      <li><%= link_to "Partnership", root_path %></li>
 
-          <% else %>
+      <li><%= link_to "Login", new_user_session_path %></li>
+      <li><%= link_to "Sign Up", new_user_registration_path %></li>
 
-          <li><button class="btn btn-form btn-small">
-          <%= link_to "Your Wines", your_trips_path, style: "color: white; text-decoration: none;" %></button></li>
+      <% else %>
+
+      <li><button class="btn btn-form btn-small">
+        <%= link_to "Your Wines Purchased", your_trips_path, style: "color: white; text-decoration: none;" %></button></li>
 
 <!--
           <%= link_to "Log out", destroy_user_session_path, method: :delete %>
 
--->
-            <li><%= link_to notifications_path do %>
-            <i class="fa fa-bell fa-2x icon-babu"></i>
-            <span class="badge" id="navbar_num_of_unread"><%= current_user.unread if current_user.unread > 0 %></span>
-            <% end %>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-            role="button" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag avatar_url(current_user), class: "img-circle avatar-small" %>&nbsp;
-            <%= current_user.fullname %> <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li><%= link_to "Dashboard", dashboard_path %></li>
-            <li><%= link_to "Messages", conversations_path %></li>
-             <li><%= link_to "Payment Method", payment_method_path %></li>
-
-            <li role="separator" class="divider"></li>
-            <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-            <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-          </ul>
+        -->
+        <li><%= link_to notifications_path do %>
+          <i class="fa fa-bell fa-2x icon-babu"></i>
+          <span class="badge" id="navbar_num_of_unread"><%= current_user.unread if current_user.unread > 0 %></span>
+          <% end %>
         </li>
-        <% end %>
-      </ul>
-    </div><!--/.nav-collapse -->
-  </div>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+          role="button" aria-haspopup="true" aria-expanded="false">
+          <%= image_tag avatar_url(current_user), class: "img-circle avatar-small" %>&nbsp;
+          <%= current_user.fullname %> <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><%= link_to "Dashboard", dashboard_path %></li>
+          <li><%= link_to "Messages", conversations_path %></li>
+          <li><%= link_to "Payment Method", payment_method_path %></li>
+
+          <li role="separator" class="divider"></li>
+          <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+          <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+        </ul>
+      </li>
+      <% end %>
+    </ul>
+  </div><!--/.nav-collapse -->
+</div>
 </nav>
 

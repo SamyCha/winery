@@ -59,6 +59,11 @@ get '/become_host' => 'pages#become_host'
   post '/notification_settings' => 'settings#update'
 
   get '/notifications' => 'notifications#index'
+  get '/wine_demand' => 'pages#wine_demand'
+
+
+
+
 
   mount ActionCable.server => '/cable'
 

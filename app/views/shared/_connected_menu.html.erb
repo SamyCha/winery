@@ -1,21 +1,18 @@
 <% if (user_signed_in?) && !current_page?(root_path) && !current_page?(search_path) && !current_page?(become_host_path) %>
 <nav class="navbar navbar-default" style="background-color: #565A5C">
- <h3 class='text-white text-center'>DASHBOARD:</h3>
-<hr>
  <ul class="nav navbar-nav">
   <li <% if current_page?(dashboard_path) %> class="active" <% end %> ><%= link_to "Dashboard", dashboard_path %></li>
   <% if current_user.state == 'host' %>
   <li <% if current_page?(new_room_path) %> class="active" <% end %> ><%= link_to "Add New Bootle", new_room_path %></li>
   <li <% if current_page?(rooms_path) %> class="active" <% end %> ><%= link_to "Update a Bootle", rooms_path %></li>
   <li <% if current_page?(your_reservations_path) %> class="active" <% end %> ><%= link_to "Your Bookings", your_reservations_path %></li>
-  <li <% if current_page?('#') %> class="active" <% end %> ><%= link_to "Wine demand", '#' %></li>
+  <li <% if current_page?(wine_demand_path) %> class="active" <% end %> ><%= link_to "Wine demand", wine_demand_path %></li>
   <li <% if current_page?(revenues_path) %> class="active" <% end %> ><%= link_to "Revenues", revenues_path %></li>
   <% end %>
   <li <% if current_page?(conversations_path) %> class="active" <% end %> ><%= link_to "Messages", conversations_path %></li>
 <!-- For Stripe Connect Use:
    link_to payout_method_path.......
  -->
- <li <% if current_page?(your_trips_path) %> class="active" <% end %> ><%= link_to "Your Trips", your_trips_path %></li>
  <li <% if current_page?(notification_settings_path) %> class="active" <% end %> ><%= link_to "Notifications", notification_settings_path %></li>
 </ul>
 </nav>

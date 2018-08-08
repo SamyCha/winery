@@ -6,6 +6,9 @@ class PagesController < ApplicationController
   def become_host
   end
 
+  def wine_demand
+  end
+
   def search
     # STEP 1
     if params[:search].present? && params[:search].strip != ""
@@ -14,7 +17,7 @@ class PagesController < ApplicationController
 
     # STEP 2
     if session[:loc_search] && session[:loc_search] != ""
-      @rooms_address = Room.where(active: true).near(session[:loc_search], 1, order: 'distance')
+      @rooms_address = Room.where(active: true).near(session[:loc_search], 500, order: 'distance')
     else
       @rooms_address = Room.where(active: true).all
     end

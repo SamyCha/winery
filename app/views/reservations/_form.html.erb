@@ -1,7 +1,7 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <span><% if @room.Instant? %><i class="fa fa-bolt" style="color: #ffb400"></i> <% end %> $<%= @room.price %></span>
-    <span class="pull-right">Per Night</span>
+    <span class="pull-right">Book Now</span>
   </div>
   <div class="panel-body">
     <%= form_for([@room, @room.reservations.new]) do |f| %>
