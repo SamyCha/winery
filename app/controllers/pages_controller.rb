@@ -7,6 +7,7 @@ class PagesController < ApplicationController
   end
 
   def wine_demand
+    @reservations = Reservation.all.limit(10)
   end
 
   def search

@@ -5,50 +5,19 @@
   <hr>
   <div class='row'>
     <div class='col-md-8'>
+      <% @reservations.each do |reservation| %>
       <div class="product">
         <div class='product-upvote'>
-          <div class="product-arrow"></div>
-          <div class='product-count'>June 18th 2018</div>
+          <div><%= image_tag 'wine_house.png', height: 30 %> </div>
+          <div class='product-count'>Reservation faite le: <br><%= reservation.room.created_at.strftime("%-d/%-m/%y") %></div>
         </div>
         <%= image_tag "glasses.jpg", class:"product-image hidden-xs" %>
         <div class='product-body'>
-          <h3>Chateau Haut Brion 1995</h3>
-          <p>Medoc</p> 600 euros
+          <h3><%= reservation.room.listing_name %></h3>
+          <p><%= reservation.room.room_type %></p> <%= reservation.room.price %> euros
         </div>
       </div>
-      <div class="product">
-        <div class='product-upvote'>
-          <div class="product-arrow"></div>
-          <div class='product-count'>June 18th 2018</div>
-        </div>
-        <%= image_tag "glasses.jpg", class:"product-image hidden-xs" %>
-        <div class='product-body'>
-        <h3>Clos des Moines 2008</h3>
-          <p>Lallande-Pomerol</p> 14 euros
-        </div>
-      </div>
-      <div class="product">
-        <div class='product-upvote'>
-          <div class="product-arrow"></div>
-          <div class='product-count'>June 17th 2018</div>
-        </div>
-        <%= image_tag "glasses.jpg", class:"product-image hidden-xs" %>
-        <div class='product-body'>
-          <h3>Chateau Citran 2014</h3>
-          <p>Saint Emilion</p> 20 euros
-        </div>
-      </div>
-      <div class="product">
-        <div class='product-upvote'>
-          <div class="product-arrow"></div>
-          <div class='product-count'>June 17th 2018</div>
-        </div>
-        <%= image_tag "glasses.jpg", class:"product-image hidden-xs" %>
-        <div class='product-body'>
-          <h3>Chateau Larose-Trintaudon 1995</h3>
-          <p>Medoc</p> 35 euros
-        </div>
-      </div>
+      <% end %>
     </div>
     <div class='col-md-4'>
       MAP HERE
