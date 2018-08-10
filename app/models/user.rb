@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+
+  after_create :subscribe_to_newsletter
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -67,6 +69,13 @@ enum state:  [:customer, :host]
 #    def is_active_host
 #    !self.merchant_id.blank?
 #  end
+
+private
+
+  def subscribe_to_newsletter
+    SubscribeToNewsletterService.new(self).call
+  end
+
 
 end
 

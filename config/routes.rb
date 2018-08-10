@@ -60,10 +60,8 @@ get '/become_host' => 'pages#become_host'
 
   get '/notifications' => 'notifications#index'
   get '/wine_demand' => 'pages#wine_demand'
-
-
-
-
+  get '/partnership' => 'pages#partnership'
+  get 'subscribe_newsletter' => 'pages#subscribe_newsletter'
 
   mount ActionCable.server => '/cable'
 

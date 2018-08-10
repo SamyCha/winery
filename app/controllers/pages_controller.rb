@@ -3,6 +3,12 @@ class PagesController < ApplicationController
     @rooms = Room.where(active: true).limit(3)
   end
 
+  def partnership
+  end
+
+  def subscribe_newsletter
+  end
+
   def become_host
   end
 

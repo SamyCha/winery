@@ -30,6 +30,7 @@ gem 'aws-sdk-s3'
 gem 'geocoder', '~> 1.4'
 gem 'ransack'
 gem 'chartkick'
+gem 'gibbon'
 
 gem 'fullcalendar-rails', '~> 3.4.0'
 gem 'momentjs-rails', '~> 2.17.1'
