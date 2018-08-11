@@ -3,6 +3,9 @@ class PagesController < ApplicationController
     @rooms = Room.where(active: true).limit(3)
   end
 
+  def concept
+  end
+
   def partnership
   end
 

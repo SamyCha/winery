@@ -1,0 +1,19 @@
+<div class="background-image">
+  <div class="container">
+    <div class="row">
+      <div class='col-xs-12 col-md-6 text-white text-center'>
+        <br><br>
+        Have you ever been looking for a good wine accessible with realistic reviews?<br><br>
+        Have you ever told yourself: <br>How expensive is this wine here!<br> Is there nothing at bargain price?<br><br>
+        Have you ever said to yourself:<br> I could be a good cavist! <br>
+        So you're ready!<br>
+        <% if (!user_signed_in?) %>
+        <button class="btn btn-form btn-small">
+        <%= link_to "Become a wine seller now", new_user_registration_path, style: "color: white; text-decoration: none;" %></button>
+        <% end %>
+        </div>
+        <div class='col-xs-12 col-md-6'>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -6,7 +6,14 @@ Rails.application.routes.draw do
   path_names: {sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'registration'},
   controllers: {omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations'}
 
-  resources :users, only: [:show]
+
+  resources :users, only: [:show] do
+    member do
+      post '/verify_phone_number' => 'users#verify_phone_number'
+      patch '/update_phone_number' => 'users#update_phone_number'
+    end
+  end
+
   resources :rooms, except: [:edit] do
     member do
       get 'listing'
@@ -30,7 +37,7 @@ Rails.application.routes.draw do
   get '/your_reservations' => 'reservations#your_reservations'
 
   get 'search' => 'pages#search'
-get '/become_host' => 'pages#become_host'
+  get '/become_host' => 'pages#become_host'
 
 
   get 'dashboard' => 'dashboards#index'
@@ -44,7 +51,7 @@ get '/become_host' => 'pages#become_host'
 
   resources :revenues, only: [:index]
 
-    resources :conversations, only: [:index, :create]  do
+  resources :conversations, only: [:index, :create]  do
     resources :messages, only: [:index, :create]
   end
 
@@ -53,16 +60,18 @@ get '/become_host' => 'pages#become_host'
   get '/payment_method' => "users#payment"
 #For Stripe Connect Use:
 #  get '/payout_method' => "users#payout"
-  post '/add_card' => "users#add_card"
+post '/add_card' => "users#add_card"
 
-  get '/notification_settings' => 'settings#edit'
-  post '/notification_settings' => 'settings#update'
+get '/notification_settings' => 'settings#edit'
+post '/notification_settings' => 'settings#update'
 
-  get '/notifications' => 'notifications#index'
-  get '/wine_demand' => 'pages#wine_demand'
-  get '/partnership' => 'pages#partnership'
-  get 'subscribe_newsletter' => 'pages#subscribe_newsletter'
+get '/notifications' => 'notifications#index'
+get '/wine_demand' => 'pages#wine_demand'
+get '/partnership' => 'pages#partnership'
+get 'subscribe_newsletter' => 'pages#subscribe_newsletter'
+get 'concept' => 'pages#concept'
 
-  mount ActionCable.server => '/cable'
+
+mount ActionCable.server => '/cable'
 
 end

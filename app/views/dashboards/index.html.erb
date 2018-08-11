@@ -16,7 +16,9 @@
             <% if current_user.provider %>
             <li>Facebook<span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span></li>
             <% end %>
-
+            <% if current_user.phone_verified %>
+            <li>Phone Number<span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span></li>
+            <% end %>
           </ul>
         </div>
       </div>
@@ -24,32 +26,32 @@
 
     <div class="col-md-9">
 
-<% if current_user.status? %>
-<u>NOTA BENE:</u> Your account is being verified before becoming a wine seller. You will receive an email to confirm your new status soon!
-<br><br>
-<% end %>
+      <% if current_user.status? %>
+      <u>NOTA BENE:</u> Your account is being verified before becoming a wine seller. You will receive an email to confirm your new status soon!
+      <br><br>
+      <% end %>
 
 
-   <!-- Notification -->
-    <div class="panel panel-default">
-      <div class="panel-heading">Notifications</div>
-      <div class="panel-body">
+      <!-- Notification -->
+      <div class="panel panel-default">
+        <div class="panel-heading">Notifications</div>
+        <div class="panel-body">
           <%= link_to notifications_path do %>
-              You have <span id="num_of_unread"><%= current_user.unread %></span> notification(s).
+          You have <span id="num_of_unread"><%= current_user.unread %></span> notification(s).
           <% end %>
+        </div>
       </div>
-    </div>
 
 
       <!-- Your Listings -->
-<% if current_user.host? %>
+      <% if current_user.host? %>
       <div class="panel panel-default">
         <div class="panel-heading">Your Wine to be sold (<%= @rooms.length %>)</div>
         <div class="panel-body">
           <%= render partial: "rooms/rooms_list", locals: {rooms: @rooms} %>
         </div>
       </div>
-<% end %>
+      <% end %>
 
 
     </div>

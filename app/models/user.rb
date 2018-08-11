@@ -46,29 +46,29 @@ enum state:  [:customer, :host]
     end
   end
 
-  #def generate_pin
-  #  self.pin = SecureRandom.hex(2)
-  #  self.phone_verified = false
- #   save
- # end
+  def generate_pin
+    self.pin = SecureRandom.hex(2)
+    self.phone_verified = false
+    save
+  end
 
-#  def send_pin
-#    @client = Twilio::REST::Client.new
-#    @client.messages.create(
-#      from: '+61437798403',
-#      to: self.phone_number,
-#      body: "Your pin is #{self.pin}"
-#    )
-#  end
+  def send_pin
+    @client = Twilio::REST::Client.new
+    @client.messages.create(
+      from: '+33644601157',
+      to: self.phone_number,
+      body: "Your pin is #{self.pin}"
+    )
+  end
 
-#  def verify_pin(entered_pin)
-#    update(phone_verified: true) if self.pin == entered_pin
-#  end
+  def verify_pin(entered_pin)
+    update(phone_verified: true) if self.pin == entered_pin
+  end
 
 #For Stripe Connect Use
-#    def is_active_host
-#    !self.merchant_id.blank?
-#  end
+    def is_active_host
+    !self.merchant_id.blank?
+  end
 
 private
 

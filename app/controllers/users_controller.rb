@@ -13,33 +13,30 @@ class UsersController < ApplicationController
   end
 
 # Send SMS with Twillio
-#  def update_phone_number
-#    current_user.update_attributes(user_params)
-#    current_user.generate_pin
-#    current_user.send_pin
+def update_phone_number
+ current_user.update_attributes(user_params)
+ current_user.generate_pin
+ current_user.send_pin
 
-#    redirect_to edit_user_registration_path, notice: "Saved..."
-#  rescue Exception => e
-#    redirect_to edit_user_registration_path, alert: "#{e.message}"
-#  end
+ redirect_to edit_user_registration_path, notice: "Saved..."
+rescue Exception => e
+ redirect_to edit_user_registration_path, alert: "#{e.message}"
+end
 
-#  def verify_phone_number
-#    current_user.verify_pin(params[:user][:pin])
-
-#    if current_user.phone_verified
-#      flash[:notice] = "Your phone number is verified."
-#    else
-#      flash[:alert] = "Cannot verify your phone number."
-#    end
-
-#    redirect_to edit_user_registration_path
-
-#  rescue Exception => e
-#    redirect_to edit_user_registration_path, alert: "#{e.message}"
-#  end
-
-  def payment
+def verify_phone_number
+  current_user.verify_pin(params[:user][:pin])
+  if current_user.phone_verified
+    flash[:notice] = "Your phone number is verified."
+  else
+    flash[:alert] = "Cannot verify your phone number."
   end
+  redirect_to edit_user_registration_path
+rescue Exception => e
+  redirect_to edit_user_registration_path, alert: "#{e.message}"
+end
+
+def payment
+end
 
 # For Stripe Connect Use:
 #  def payout
@@ -49,13 +46,13 @@ class UsersController < ApplicationController
 #    end
 #  end
 
-  def add_card
-    if current_user.stripe_id.blank?
-      customer = Stripe::Customer.create(
-        email: current_user.email
+def add_card
+  if current_user.stripe_id.blank?
+    customer = Stripe::Customer.create(
+      email: current_user.email
       )
-      current_user.stripe_id = customer.id
-      current_user.save
+    current_user.stripe_id = customer.id
+    current_user.save
 
       # Add Credit Card to Stripe
       customer.sources.create(source: params[:stripeToken])
@@ -74,8 +71,8 @@ class UsersController < ApplicationController
 
   private
 
-    def user_params
-      params.require(:user).permit(:phone_number, :pin)
-    end
+  def user_params
+    params.require(:user).permit(:phone_number, :pin)
+  end
 end
 
