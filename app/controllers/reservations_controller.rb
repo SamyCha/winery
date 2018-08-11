@@ -34,6 +34,8 @@ before_action :is_host, only: [:your_reservations]
       if @reservation.Waiting!
         if room.Request?
           flash[:notice] = "Request sent successfully!"
+      #If a request is made by customer an sms is sent to the seller
+          send_sms_request(room, @reservation) if room.user.setting.enable_sms
         else
           charge(room, @reservation)
         end
@@ -65,14 +67,26 @@ before_action :is_host, only: [:your_reservations]
 
   private
 #Send SMS from the guest to the host after booking with Twillio
-#    def send_sms(room, reservation)
-#      @client = Twilio::REST::Client.new
-#      @client.messages.create(
-#        from: '+61437798403',
-#        to: room.user.phone_number,
-#        body: "#{reservation.user.fullname} booked your '#{room.listing_name}'"
-#      )
-#    end
+    def send_sms(room, reservation)
+     @client = Twilio::REST::Client.new
+     @client.messages.create(
+       from: '++33644601157',
+       to: room.user.phone_number,
+               body: "#{reservation.user.fullname} booked your '#{room.listing_name}'"
+      )
+    end
+
+
+    def send_sms_request(room, reservation)
+     @client = Twilio::REST::Client.new
+     @client.messages.create(
+       from: '++33644601157',
+       to: room.user.phone_number,
+               body: "#{reservation.user.fullname} made a request for your '#{room.listing_name}'"
+      )
+    end
+
+
 
         def charge(room, reservation)
       if !reservation.user.stripe_id.blank?
@@ -93,7 +107,7 @@ before_action :is_host, only: [:your_reservations]
         if charge
           reservation.Approved!
 #          ReservationMailer.send_email_to_guest(reservation.user, room).deliver_later if reservation.user.setting.enable_email
-          #send_sms(room, reservation) if room.user.setting.enable_sms
+          send_sms(room, reservation) if room.user.setting.enable_sms
           flash[:notice] = "Reservation created successfully!"
         else
           reservation.Declined!
