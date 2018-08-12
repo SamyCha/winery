@@ -1,5 +1,6 @@
-<%= render partial: 'shared/connected_menu' %>
-
+<div class="background-image">
+<br>
+<br>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
@@ -13,7 +14,7 @@
                 <%= f.check_box :enable_email %> Email
               </div>
               <div class="col-md-6 text-center">
-                <%= f.check_box :enable_sms %> SMS
+                <%= f.check_box :enable_sms %> SMS (<%= link_to 'before update your phone number', edit_user_registration_path %>)
               </div>
             </div>
             <div class="text-center">
@@ -25,4 +26,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>
