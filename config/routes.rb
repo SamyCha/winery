@@ -58,20 +58,21 @@ Rails.application.routes.draw do
 
   get '/host_calendar' => "calendars#host"
   get '/payment_method' => "users#payment"
-#For Stripe Connect Use:
-#  get '/payout_method' => "users#payout"
-post '/add_card' => "users#add_card"
 
-get '/notification_settings' => 'settings#edit'
-post '/notification_settings' => 'settings#update'
+  #For Stripe Connect Use:
+  get '/payout_method' => "users#payout"
 
-get '/notifications' => 'notifications#index'
-get '/wine_demand' => 'pages#wine_demand'
-get '/partnership' => 'pages#partnership'
-get 'subscribe_newsletter' => 'pages#subscribe_newsletter'
-get 'concept' => 'pages#concept'
+  post '/add_card' => "users#add_card"
 
+  get '/notification_settings' => 'settings#edit'
+  post '/notification_settings' => 'settings#update'
 
-mount ActionCable.server => '/cable'
+  get '/notifications' => 'notifications#index'
+  get '/wine_demand' => 'pages#wine_demand'
+  get '/partnership' => 'pages#partnership'
+  get 'subscribe_newsletter' => 'pages#subscribe_newsletter'
+  get 'concept' => 'pages#concept'
+
+  mount ActionCable.server => '/cable'
 
 end
