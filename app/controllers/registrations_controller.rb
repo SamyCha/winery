@@ -8,7 +8,7 @@ class RegistrationsController < Devise::RegistrationsController
 # redirect after sign-up host
   def after_sign_up_path_for(resource)
     if current_user.status?
-        flash[:notice] = "Your account is verified before being a seller"
+        flash[:notice] = "Please confirm by e-mail your inscription. Your account is verified before being a seller. "
           return payout_method_path
     else
         return root_path

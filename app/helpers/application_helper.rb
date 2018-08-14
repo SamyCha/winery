@@ -9,7 +9,7 @@ module ApplicationHelper
 
 # For Stripe Connect
   def stripe_express_path
-    "https://connect.stripe.com/express/oauth/authorize?response_type=code&client_id=<%= ENV['STRIPE_CA_ID'] %>&scope=read_write"
+    "https://connect.stripe.com/express/oauth/authorize?response_type=code&client_id=ca_DPPVxTX1maxCDKYj4sr4edqDYd9ObnjQ&scope=read_write"
   end
 
 end

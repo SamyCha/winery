@@ -95,13 +95,12 @@ before_action :is_host, only: [:your_reservations]
           :customer => customer.id,
           :amount => reservation.total * 100,
           :description => room.listing_name,
-          :currency => "eur"
+          :currency => "eur",
 #In case of usig Stripe Connect with the host
-#          ,
-#          :destination => {
-#            :amount => reservation.total * 80, # 80% of the total amount goes to the Host
-#            :account => room.user.merchant_id # Host's Stripe customer ID
-#          }
+          :destination => {
+            :amount => reservation.total * 80, # 80% of the total amount goes to the Host
+            :account => room.user.merchant_id # Host's Stripe customer ID
+          }
         )
 
         if charge
@@ -118,6 +117,7 @@ before_action :is_host, only: [:your_reservations]
       reservation.declined!
       flash[:alert] = e.message
     end
+
 
     def set_reservation
       @reservation = Reservation.find(params[:id])
