@@ -284,7 +284,7 @@ Devise.setup do |config|
   config.omniauth :facebook, ENV['FACEBOOK_ID'], ENV['FACEBOOK_SECRET'], scope: 'email', info_fields: 'email, name'
 
 #For Stripe Connect use:
-config.omniauth :stripe_connect, 'ENV['STRIPE_CA_ID']', ENV['STRIPE_SECRET_KEY'], scope: 'read_write', stripe_landing: 'login'
+config.omniauth :stripe_connect, ENV['STRIPE_CA_ID'], ENV['STRIPE_SECRET_KEY'], scope: 'read_write', stripe_landing: 'login'
 
 
 end

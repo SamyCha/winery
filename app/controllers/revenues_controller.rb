@@ -10,6 +10,12 @@ class RevenuesController < ApplicationController
                                       .inject({}) {|a,b| a.merge(b){|_,x,y| x + y}}
 
     @this_week_revenue = Date.today().all_week.map{ |date| [date.strftime("%a"), @this_week_revenue[date.strftime("%Y-%m-%d")] || 0 ] }
+
+    if !current_user.merchant_id.blank?
+      account = Stripe::Account.retrieve(current_user.merchant_id)
+      @login_link = account.login_links.create()
+    end
+
   end
 
 

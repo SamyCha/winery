@@ -1,6 +1,20 @@
 <%= render partial: 'shared/connected_menu' %>
 
 <div class="row">
+  <div class="col-md-12 text-center">
+    Access to your stripe account to see your revenues or update your account
+        <% if current_user.merchant_id.blank? %>
+        <%= link_to image_tag('stripe_button.png'), stripe_express_path %>
+        <% else %>
+        <br/>
+        <div class='text-center text-white'>
+          <%= link_to "Acces to my revenues", @login_link.url, class: "btn btn-normal" %>
+        </div>
+        <% end %>
+    <br><br></div>
+</div>
+
+<div class="row">
   <div class="col-md-12">
     <div class="panel panel-default">
       <div class="panel-heading">This Week's Revenue</div>
@@ -8,7 +22,7 @@
         <div class="container text-center">
           <% if @reservations.blank? %>
               <h3>You don't have any reservations</h3><br/>
-              <%= link_to "Become a Host to earn income", new_room_path, class: "btn btn-normal" %>
+              <%= link_to "Add a bootle to earn money", new_room_path, class: "btn btn-normal" %>
           <% else %>
               <%= column_chart @this_week_revenue, colors: ["#00A699"] %>
           <% end %>

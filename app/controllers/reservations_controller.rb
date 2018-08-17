@@ -88,7 +88,7 @@ before_action :is_host, only: [:your_reservations]
 
 
 
-        def charge(room, reservation)
+    def charge(room, reservation)
       if !reservation.user.stripe_id.blank?
         customer = Stripe::Customer.retrieve(reservation.user.stripe_id)
         charge = Stripe::Charge.create(
@@ -96,7 +96,6 @@ before_action :is_host, only: [:your_reservations]
           :amount => reservation.total * 100,
           :description => room.listing_name,
           :currency => "eur",
-#In case of usig Stripe Connect with the host
           :destination => {
             :amount => reservation.total * 80, # 80% of the total amount goes to the Host
             :account => room.user.merchant_id # Host's Stripe customer ID
@@ -105,7 +104,7 @@ before_action :is_host, only: [:your_reservations]
 
         if charge
           reservation.Approved!
-#          ReservationMailer.send_email_to_guest(reservation.user, room).deliver_later if reservation.user.setting.enable_email
+          ReservationMailer.send_email_to_guest(reservation.user, room).deliver_later if reservation.user.setting.enable_email
           send_sms(room, reservation) if room.user.setting.enable_sms
           flash[:notice] = "Reservation created successfully!"
         else
@@ -117,7 +116,6 @@ before_action :is_host, only: [:your_reservations]
       reservation.declined!
       flash[:alert] = e.message
     end
-
 
     def set_reservation
       @reservation = Reservation.find(params[:id])
