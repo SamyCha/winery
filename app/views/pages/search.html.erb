@@ -1,3 +1,5 @@
+<div class="background-image">
+
 <div class="container">
     <div id="main">
       <div id="left">
@@ -13,7 +15,7 @@
         <div class="row">
           <br/>
           <div class="collapse" id="collapsePanel">
-
+<div class=' text-white3'>
             <%= search_form_for @search, url: search_path, remote: true do |f| %>
 
             <div class="row">
@@ -46,17 +48,15 @@
               </div>
             </div>
             <hr/>
-
+<!--
             <div class="row">
               <div class="col-md-6">
                 <%= text_field_tag :start_date, params[:start_date], readonly: true, placeholder: "For when?", class: "form-control datepicker" %>
               </div>
-              <div class="col-md-6">
-                <%= text_field_tag :end_date, params[:end_date], readonly: true, placeholder: "End Date", class: "form-control datepicker" %>
-              </div>
             </div>
-            <hr/>
 
+            <hr/>
+-->
 
             <div class="row">
               <div class="col-md-4">
@@ -81,8 +81,8 @@
                 </div>
               </div>
             </div>
+<!--
             <hr/>
-
             <div class="row">
               <div class="col-md-4">
                 <%= check_box_tag "q[is_tv_eq]", true %> with delivery in less than 10 minutes
@@ -96,11 +96,13 @@
 
             </div>
             <hr/>
-
+-->
             <div class="row text-center">
               <%= f.submit "Search a bottle", class: "btn btn-form" %>
             </div>
             <% end %>
+</div>
+
           </div>
           <br/>
 
@@ -135,7 +137,7 @@
               map: map
             });
             inforwindow = new google.maps.InfoWindow({
-              content: "<div class='map_price'>$" + room.price + "</div>"
+              content: room.listing_name + " " + room.price + "euros" +"<div class='map_price'>" + "</div>"
             });
             inforwindow.open(map, marker);
           })
@@ -196,4 +198,5 @@
     $(".ui-state-default, .ui-widget-content").css('border-color', '#a83034');
   })
 </script>
+</div>
 </div>
