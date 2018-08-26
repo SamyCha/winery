@@ -26,7 +26,7 @@
       <!-- About -->
       <div class="row">
         <div class="col-md-7 text-white3">
-         Address:<br> <%= @room.address %><br><br>
+         bottle located:<br> <%= @room.address %><br><br>
          Delivery and Conditions:<br>
          <ul class="amenities">
           <li><%= image_tag 'checkbox-icon', width: 28 %> To Take Away</li>
@@ -84,10 +84,10 @@
     <div class="row">
       <div class="col-md-12">
        <div class="panel panel-default text-center">
-         sold by: <%= @room.user.fullname %>
-         <%= image_tag avatar_url(@room.user), class: "img-circle avatar-small" %>
          <div class="panel-heading">
-          <%= pluralize(@guest_reviews.count, "Review") %>
+         sold by:  <%= @room.user.fullname %>
+         <%= image_tag avatar_url(@room.user), class: "img-circle avatar-small" %>
+          <br><%= pluralize(@guest_reviews.count, "Review") %>
           <span id="average_rating"></span>
         </div>
         <div class="container">
