@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
       </button>
       <%= image_tag "wine_house.png", height: 50 %>
-      <%= link_to "Wine Houses", root_path, class: "navbar-brand" %>
+      <%= link_to "Wines House", root_path, class: "navbar-brand" %>
     </div>
 
     <ul class="nav navbar-nav navbar-right">
@@ -19,9 +19,14 @@
 
       <% else %>
 
+      <% if current_user.customer? %>
       <li><button class="btn btn-form btn-small">
         <%= link_to "Your Wines Purchased", your_trips_path, style: "color: white; text-decoration: none;" %></button></li>
+        <% else %>
+ <li><button class="btn btn-form btn-small">
+        <%= link_to "Add a bootle", your_trips_path, style: "color: white; text-decoration: none;" %></button></li>
 
+<% end %>
 <!--
           <%= link_to "Log out", destroy_user_session_path, method: :delete %>
 

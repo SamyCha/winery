@@ -111,5 +111,7 @@ config.paperclip_defaults = {
  }
 }
 
+#Google Analytics
+GA.tracker = "UA-125026283-1"
 
 end

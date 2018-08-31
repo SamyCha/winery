@@ -42,6 +42,9 @@ gem 'omniauth-stripe-connect', '~> 2.10.0'
 gem 'postmark-rails'
 gem 'twilio-ruby', '>= 4.11.1'
 
+gem 'google-analytics-rails', '1.1.1'
+
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

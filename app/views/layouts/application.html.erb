@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Wine Houses</title>
+  <title>Wines House</title>
   <%= csrf_meta_tags %>
   <%= action_cable_meta_tag %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -25,6 +25,9 @@
 
 <!--cette ligne me permet d'avoir le drop down fonctionnel en local mais plus les modals -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Google Analytics -->
+<%= analytics_init if GoogleAnalytics.valid_tracker? %>
 
 </head>
 <body>
