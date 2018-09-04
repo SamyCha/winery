@@ -17,30 +17,41 @@
 
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>&libraries=places"></script>
 
- <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative:900|Cinzel:900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative:900|Cinzel:900" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/hot-sneaks/jquery-ui.css">
 
 
 
-<!--cette ligne me permet d'avoir le drop down fonctionnel en local mais plus les modals -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!--cette ligne me permet d'avoir le drop down fonctionnel en local mais plus les modals -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<!-- Google Analytics -->
-<%= analytics_init if GoogleAnalytics.valid_tracker? %>
+  <!-- Google Analytics -->
+  <%= analytics_init if GoogleAnalytics.valid_tracker? %>
 
-</head>
-<body>
-  <%= render 'shared/navbar' %>
-  <%= render 'shared/message' %>
+  <!--Start of Zendesk Chat Script-->
+  <script type="text/javascript">
+    window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+      d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+        _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+        $.src="https://v2.zopim.com/?5yxbCpaV8k1eu3JJHIYYLFOzaqQRsUyn";z.t=+new Date;$.
+        type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+      </script>
+      <!--End of Zendesk Chat Script-->
+    </head>
 
-  <% if current_user %>
-  <input type="hidden" id="user_id" value="<%= current_user.id %>">
-  <% end %>
 
-  <!--container inside each page -->
-  <%= yield %>
-<%= render 'shared/footer' %>
+    <body>
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/message' %>
 
-</body>
-</html>
+      <% if current_user %>
+      <input type="hidden" id="user_id" value="<%= current_user.id %>">
+      <% end %>
+
+      <!--container inside each page -->
+      <%= yield %>
+      <%= render 'shared/footer' %>
+
+    </body>
+    </html>
