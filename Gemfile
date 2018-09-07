@@ -10,6 +10,8 @@ gem 'rails', '5.1.6'
 gem 'redis', '3.0.0'
 gem 'coffee-rails', '~> 4.2.0'
 gem 'jbuilder', '~> 2.0'
+gem 'nokogiri'
+
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'

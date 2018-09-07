@@ -29,7 +29,22 @@ class RoomsController < ApplicationController
   def show
     @photos = @room.photos
     @guest_reviews = @room.guest_reviews
-  end
+
+#scrapping from wine-searcher
+require 'open-uri'
+require 'nokogiri'
+
+typology = @room.Typology
+castle = @room.listing_name
+url = "https://www.wine-searcher.com/find/#{typology}+#{castle}"
+
+html_file = open(url).read
+html_doc = Nokogiri::HTML(html_file)
+
+html_doc.search('.grp-desc').each do |element|
+  @castle = element.text.strip
+end
+end
 
   def listing
   end
@@ -110,7 +125,7 @@ class RoomsController < ApplicationController
     end
 
     def room_params
-      params.require(:room).permit(:home_type, :room_type, :accommodate, :bed_room, :bath_room, :listing_name, :summary, :address, :is_tv, :is_kitchen, :is_air, :is_heating, :is_internet, :price, :active, :instant)
+      params.require(:room).permit(:Typology, :home_type, :room_type, :accommodate, :bed_room, :bath_room, :listing_name, :summary, :address, :is_tv, :is_kitchen, :is_air, :is_heating, :is_internet, :price, :active, :instant)
     end
 
 def is_host
