@@ -29,6 +29,17 @@ class RoomsController < ApplicationController
   def show
     @photos = @room.photos
     @guest_reviews = @room.guest_reviews
+
+#API from:
+#require 'json'
+#require 'open-uri'
+
+#listing_name = @room.listing_name
+#api_key = ''
+#api_url ='http://services.wine.com/api/beta2/service.svc/json/catalog?search=#{listing_name}&size=5&offset=10&apikey=#{api_key}'
+#quote = JSON.parse(open(api_url).read)
+
+#@description = quote['joke']
   end
 
   def listing
